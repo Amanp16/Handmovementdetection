@@ -18,16 +18,17 @@ void setup() {
    pinMode(rightecho, INPUT);
 }
 void loop() {
-  left = ping(leftecho, leftPing); 
-  right = ping(rightecho, rightPing);
+  left = ping(leftPing, leftecho); 
+  right = ping(rightPing, rightecho);
   if (left)
   {
     Serial.println("Left ");
-    delay(1);
+    delay(1000);
   }
   if (right)
   {
     Serial.println("Right ");
+    delay(1000);
   }
 }
 int getDistance(int trigPin, int pingPin) {
